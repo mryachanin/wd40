@@ -1,0 +1,16 @@
+using System;
+
+namespace dotnet
+{
+    /* Base template for a solution.
+    */
+    public class Solution
+    {
+        public SolutionStatus Status => SolutionStatus.Incomplete;
+
+        public string Solve()
+        {
+            return "";
+        }
+    }
+}
