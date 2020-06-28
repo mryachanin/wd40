@@ -9,10 +9,7 @@ namespace dotnet
     */
     public class Solution1
     {
-        static void Main()
-        {
-            Console.WriteLine(new Solution1().Solve());
-        }
+        public SolutionStatus Status => SolutionStatus.Complete;
 
         public string Solve()
         {
