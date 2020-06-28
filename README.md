@@ -1,1 +1,1 @@
-# wd40
+Mike's work on Project Euler.
