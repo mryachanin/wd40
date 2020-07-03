@@ -67,52 +67,36 @@ namespace dotnet
         }
 
         /// <summary>
-        /// Finds the prime factors greater-than the square root of the given
-        /// composite number.
+        /// Finds the prime factor (if any) that is greater-than the square
+        /// root of the given composite.
         /// </summary>
         private HashSet<long> FindHigherPrimes(HashSet<long> knownPrimeFactors, long composite)
         {
-            HashSet<long> newPrimeFactors = new HashSet<long>();
-
-            // Any prime factors greater than the square root of the composite
-            // will stand alone; multiplied with n-many factors less than the
-            // square root.
+            // A prime factor (if exists) greater than the square root of the
+            /// composite will stand alone; multiplied with n-many factors less
+            /// than the square root.
             // This is due to the fact that: composite = sqrt(composite)^2
             // E.g. 100 = 10^2, which means (10+1)^2 is by definition greater.
             //
-            // Do a simple find of such larger factors by iteratively dividing
+            // Do a simple find of such larger factor by iteratively dividing
             // the composite by all factors less than the square-root.
+            long newFind = composite;
             foreach (long factor in knownPrimeFactors)
             {
-                long newFind = composite / factor;
                 while (IsFactor(factor, newFind))
                 {
                     newFind /= factor;
                 }
-
-                foreach (long otherfactor in knownPrimeFactors)
-                {
-                    // Avoid dividing by the same number to reach 1.
-                    if (otherfactor == factor)
-                    {
-                        continue;
-                    }
-
-                    while (IsFactor(otherfactor, newFind))
-                    {
-                        newFind /= otherfactor;
-                    }
-                }
-
-                if (newPrimeFactors.Add(newFind))
-                {
-                    Console.WriteLine("New Prime: {0}", newFind);
-                }
             }
 
-            HashSet<long> allPrimeFactors = new HashSet<long>(knownPrimeFactors);
-            allPrimeFactors.UnionWith(newPrimeFactors);
-            return allPrimeFactors;
+            // 1 means all of the prime factors are less than or equal to the
+            // square root of the composite.
+            if (newFind != 1 && knownPrimeFactors.Add(newFind))
+            {
+                Console.WriteLine("New Prime: {0}", newFind);
+            }
+
+            return knownPrimeFactors;
         }
 
         /// <summary>
