@@ -7,7 +7,7 @@ namespace dotnet
         static void Main()
         {
             DateTime start = DateTime.Now;
-            Console.WriteLine(new Solution3().Solve());
+            Console.WriteLine("Solution: {0}", new Solution4().Solve());
             DateTime end = DateTime.Now;
             Console.WriteLine("Execution took {0} seconds", (end - start).TotalSeconds);
         }
