@@ -9,9 +9,11 @@ namespace dotnet
     /// By considering the terms in the Fibonacci sequence whose values do not exceed
     /// four million, find the sum of the even-valued terms.
     /// </summary>
-    public class Solution2
+    public class Problem2 : Problem
     {
-        public SolutionStatus Status => SolutionStatus.Complete;
+        public int Number => 2;
+
+        public ProblemStatus Status => ProblemStatus.Solved;
 
         public string Solve()
         {

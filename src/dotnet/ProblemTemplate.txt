@@ -1,0 +1,17 @@
+namespace dotnet
+{
+    /// <summary>
+    /// Base template for a Project Euler problem.
+    /// </summary>
+    public class Problem : Problem
+    {
+        public int Number => 0;
+
+        public ProblemStatus Status => ProblemStatus.Unsolved;
+
+        public string Solve()
+        {
+            return "";
+        }
+    }
+}

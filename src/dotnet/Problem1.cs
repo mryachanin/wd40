@@ -6,9 +6,11 @@ namespace dotnet
     ///
     /// Find the sum of all the multiples of 3 or 5 below 1000.
     /// </summary>
-    public class Solution1
+    public class Problem1 : Problem
     {
-        public SolutionStatus Status => SolutionStatus.Complete;
+        public int Number => 1;
+
+        public ProblemStatus Status => ProblemStatus.Solved;
 
         public string Solve()
         {

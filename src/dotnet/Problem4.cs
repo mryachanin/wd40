@@ -11,9 +11,11 @@ namespace dotnet
     /// Find the largest palindrome made from the product of two 3-digit
     /// numbers.
     /// </summary>
-    public class Solution4
+    public class Problem4 : Problem
     {
-        public SolutionStatus Status => SolutionStatus.Complete;
+        public int Number => 4;
+
+        public ProblemStatus Status => ProblemStatus.Solved;
 
         public string Solve()
         {

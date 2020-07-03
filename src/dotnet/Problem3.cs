@@ -9,9 +9,11 @@ namespace dotnet
     ///
     /// What is the largest prime factor of the number 600851475143 ?
     /// </summary>
-    public class Solution3
+    public class Problem3 : Problem
     {
-        public SolutionStatus Status => SolutionStatus.Complete;
+        public int Number => 3;
+
+        public ProblemStatus Status => ProblemStatus.Solved;
 
         public string Solve()
         {
