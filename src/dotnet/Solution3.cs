@@ -42,6 +42,7 @@ namespace dotnet
             // Special case even numbers up front. Only prime factor will be 2.
             if ((composite & 1) == 0)
             {
+                Console.WriteLine("New Prime: {0}", 2);
                 knownPrimeFactors.Add(2);
             }
 
