@@ -18,6 +18,7 @@ namespace dotnet
             registry.Register(new Problem3());
             registry.Register(new Problem4());
             registry.Register(new Problem5());
+            registry.Register(new Problem6());
         }
 
         private static void RunProblem(Problem problem)
